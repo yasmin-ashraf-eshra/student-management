@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\student;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +21,17 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/create',function(){
+    return view('create');
+});
+
+Route::post('/create',function(){
+    $student = new student();
+    $student->name = request('name');
+    $student->email = request('email');
+    $student->password = request('password');
+    $student->save();
+});
+
 require __DIR__.'/auth.php';
+

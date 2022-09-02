@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->string('Level');
-            $table->string('Contact-Info');
+            $table->string('Email')->unique();
+            $table->string('Password');
             $table->timestamps();
         });
     }
