@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Models\student;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +20,13 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/', function () {
     return view('auth.login');
 });
-
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 Route::get('/create',function(){
     return view('create');
@@ -48,5 +53,5 @@ Route::post('/registerStudent',function(){
     return redirect('/create');
 });
 
-require __DIR__.'/auth.php';
 
+require __DIR__.'/auth.php';
