@@ -36,7 +36,7 @@ Route::post('/create',function(){
     $student = new User();
     $student->name = request('name');
     $student->email = request('email');
-    $student->password = request(Hash::nake('password'));
+    $student->password = Hash::make('12345678');
     $student->save();
     return redirect('/registerStudent');
 });
@@ -52,6 +52,12 @@ Route::post('/registerStudent',function(){
     $student->save();
     return redirect('/create');
 });
-
+Route::get('/studentstable', function () {
+    $student = DB::table('users')
+    ->join('students', 'users.id', '=', 'students.id')
+    ->select('users.id','users.name','users.email', 'students.*')
+    ->get();
+    return view('studentstable', ['student' => $student]);
+});
 
 require __DIR__.'/auth.php';

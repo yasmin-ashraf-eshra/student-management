@@ -14,5 +14,5 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    <h1>Welcome yasmin</h1>
+    <h1 align="center" style="font-weight: bold">Alexandria University</h1>
 </x-app-layout>
