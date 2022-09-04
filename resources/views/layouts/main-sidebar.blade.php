@@ -5,6 +5,7 @@
                 </div>
         <ul>
             <li><a href="{{ url('/' . $page='dashboard') }}">Home</a></li>
+            <li><a href="{{ url('/' . $page='studentstable') }}">Students</a></li>
             <li><a href="{{ url('/' . $page='welcome') }}">About</a></li>
         </ul>
     </div>
