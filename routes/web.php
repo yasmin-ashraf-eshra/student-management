@@ -52,12 +52,17 @@ Route::post('/registerStudent',function(){
     $student->save();
     return redirect('/create');
 });
-Route::get('/studentstable', function () {
-    $student = DB::table('users')
-    ->join('students', 'users.id', '=', 'students.id')
-    ->select('users.id','users.name','users.email', 'students.*')
-    ->get();
-    return view('studentstable', ['student' => $student]);
+
+
+Route::middleware('auth','admin')->group(function () {
+
+    Route::get('/studentstable', function () {
+        $student = DB::table('users')
+        ->join('students', 'users.id', '=', 'students.id')
+        ->select('users.id','users.name','users.email', 'students.*')
+        ->get();
+        return view('studentstable', ['student' => $student]);
+    })->name('studentsTable');
 });
 
 require __DIR__.'/auth.php';

@@ -1,17 +1,17 @@
 <x-app-layout>
         <body>
-            <table width="400px" align="center">
+            <table width="700px" align="center" style="border-style: solid; border-width:10px;">
                 <caption>Students Data</caption>
-                <thead>
+                <thead style="border-style: solid; border-width:10px;">
                     <tr>
-                        <th width="15%">ID</th>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th width="30%">Email</th>
+                        <th>Email</th>
                         <th>Level</th>
-                        <th width="15%">GPA</th>
-                        <th width="30%">Contact-Info</th>
+                        <th>GPA</th>
+                        <th>Contact-Info</th>
                     </tr>                
-                    <tbody>
+                    <tbody  style="border-style: solid; border-width:10px;">
                         @foreach($student as $key => $data)
                             <tr>    
                                 <th>{{$data->id}}</th>
