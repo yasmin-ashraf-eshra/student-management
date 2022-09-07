@@ -7,7 +7,7 @@
             <ul>
                 <li><a href="{{ url('/' . $page='dashboard') }}">Home</a></li>
                 <li><a href="{{ url('/' . $page='studentstable') }}">Students</a></li>
-                <li><a href="{{ url('/' . $page='welcome') }}">About</a></li>    
+                <li><a href="{{ url('/' . $page='create') }}">Create Student</a></li>    
             </ul>
         @endif
         @if (Illuminate\Support\Facades\Auth::check() && !Illuminate\Support\Facades\Auth::user()->role)

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('contact');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE students AUTO_INCREMENT = 100;");
     }
-
     /**
      * Reverse the migrations.
      *

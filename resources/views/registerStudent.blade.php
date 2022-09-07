@@ -1,10 +1,25 @@
-<form action="/registerStudent" method="POST">
+<x-app-layout>
+<div class="form-box">
+   <form action="/registerStudent" method="POST">
     @csrf
-    <label for="level">Level:</label>
-    <input type="text" name="level"></br>
-    <label for="gpa">GPA:</label>
-    <input type="text" name="gpa"></br>
-    <label for="contact">Contact-Info:</label>
-    <input type="text" name="contact"></br>
-    <button>Done</button>
-</form>
+    <div>
+          <x-label for="level" :value="__('Level:')" />
+
+          <x-input id="level" type="text" name="level"  />
+       </div>
+       <div >
+          <x-label for="GPA" :value="__('GPA:')" />
+
+          <x-input id="GPA"  type="text" name="gpa"  />
+        </div>
+        <div >
+          <x-label for="contact" :value="__('Contact-Info:')" />
+
+          <x-input id="contact"  type="text" name="contact"  />
+        </div>
+    <div class="flex items-center justify-end mt-4">
+          <x-button class="ml-4" onclick="showAlert()">Register</x-button>
+        </div>
+    </form>
+</div>
+</x-app-layout> 
