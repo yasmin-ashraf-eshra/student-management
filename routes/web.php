@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -64,5 +62,13 @@ Route::middleware('auth','admin')->group(function () {
         return view('studentstable', ['student' => $student]);
     })->name('studentsTable');
 });
+
+Route::get('/information', function () {
+    $student = DB::table('users')
+    ->join('students', 'users.id', '=', 'students.id')
+    ->select('users.id','users.name','users.email', 'students.*')
+    ->get();
+    return view('information', ['student' => $student]);
+})->name('information');
 
 require __DIR__.'/auth.php';
