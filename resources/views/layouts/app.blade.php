@@ -13,20 +13,21 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+        <script src="{{ asset('js/alert.js') }}"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
         @include('layouts.main-sidebar')  
         @include('layouts.main-header')
             <!-- Page Heading -->
-{{--            <header class="bg-white shadow">--}}
+<!-- {{--            <header class="bg-white shadow">--}}
 {{--                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">--}}
 {{--                    {{ $header }}--}}
 {{--                </div>--}}
-{{--            </header>--}}
+{{--            </header>--}} -->
 
             <!-- Page Content -->
-            <main style="margin-left:21%">
+            <main style="margin-left:21%;margin-top:70px">
                 {{ $slot }}
             </main>
         </div>
