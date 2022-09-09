@@ -1,7 +1,7 @@
 <x-app-layout>  
 <div class="form-box">       
      <p style="font-size: 21px;font-weight: bold;">Add Student<p><br>       
-        <form method="POST" action="create">
+        <form method="POST" action="{{route('user.store')}}">
     @csrf
     
        <!-- Name -->
