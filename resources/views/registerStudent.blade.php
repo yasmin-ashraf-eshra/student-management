@@ -1,6 +1,6 @@
 <x-app-layout>
 <div class="form-box">
-   <form action="/registerStudent" method="POST">
+   <form action="{{route('student.store')}}" method="POST">
     @csrf
     <div>
           <x-label for="level" :value="__('Level:')" />
