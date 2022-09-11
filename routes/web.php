@@ -32,6 +32,10 @@ Route::middleware('auth','admin')->group(function () {
     Route::resource('student', StudentController::class);
 });
 
-Route::resource('user', UserController::class)->only('show');
+Route::middleware('auth')->group(function () {
+    
+    Route::resource('user', UserController::class)->only('show');
+});
+
 
 require __DIR__.'/auth.php';

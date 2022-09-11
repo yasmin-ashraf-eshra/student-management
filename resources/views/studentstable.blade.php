@@ -12,7 +12,7 @@
                         <th>Contact-Info</th>
                     </tr>                
                     <tbody  style="border-style: solid; border-width:10px;">
-                        @foreach($student as $key => $data)
+                        @foreach($student as $data)
                             <tr>    
                                 <th>{{$data->id}}</th>
                                 <th>{{$data->name}}</th>
