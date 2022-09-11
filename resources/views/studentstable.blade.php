@@ -12,14 +12,16 @@
                         <th>Contact-Info</th>
                     </tr>                
                     <tbody  style="border-style: solid; border-width:10px;">
-                        @foreach($student as $key => $data)
+                        @foreach($student as $data)
                             <tr>    
                                 <th>{{$data->id}}</th>
                                 <th>{{$data->name}}</th>
                                 <th>{{$data->email}}</th>     
                                 <th>{{$data->level}}</th>  
                                 <th>{{$data->gpa}}</th> 
-                                <th>{{$data->contact}}</th>         
+                                <th>{{$data->contact}}</th>
+                                <th><a href="{{url( 'user/' . $data->id . '/edit')}}" title="Edit"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a></th> 
+                                <th><a href="{{" title="Delete"><button class="btn-danger btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete</button></a></th>      
                             </tr>
                         @endforeach
                     </tbody>
