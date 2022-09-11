@@ -61,8 +61,14 @@ class UserController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('edit')->with('user',$user);
+    }
     public function update(Request $request, $id)
     {
-        //
+        User::where('id', $id)->update($request->except(['_token','_method']));
+        return redirect('student/' . $id . '/edit');
     }
 }

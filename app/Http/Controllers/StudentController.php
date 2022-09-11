@@ -35,8 +35,15 @@ class StudentController extends Controller
      * @param  string  $id
      * @return \Illuminate\Http\Response
      */
+    public function edit($id)
+    {
+        $student = student::find($id);
+        return view('edit2')->with('student',$student);
+    }
+
     public function update(Request $request, $id)
     {
-        //
+        student::where('id', $id)->update($request->except(['_token','_method']));
+        return redirect('user');
     }
 }
