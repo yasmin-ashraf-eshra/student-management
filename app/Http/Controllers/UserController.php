@@ -71,4 +71,10 @@ class UserController extends Controller
         User::where('id', $id)->update($request->except(['_token','_method']));
         return redirect('student/' . $id . '/edit');
     }
+    public function destroy($id)
+    {
+        User::destroy($id);
+        student::destroy($id);
+        return redirect('user');
+    }
 }
