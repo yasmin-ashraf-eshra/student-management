@@ -18,8 +18,8 @@
     
               <x-input id="contact"  type="text" name="contact"  value="{{$student->contact}}" class="form-control" />
             </div>
-        <div >
-           <x-button class="ml-4">Update</x-button>
+            <div class="flex items-center justify-end mt-4">
+              <x-button class="ml-4">Register</x-button>
             </div>
         </form>
     </div>

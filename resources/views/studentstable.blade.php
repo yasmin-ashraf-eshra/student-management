@@ -21,7 +21,11 @@
                                 <th>{{$data->gpa}}</th> 
                                 <th>{{$data->contact}}</th>
                                 <th><a href="{{url( 'user/' . $data->id . '/edit')}}" title="Edit"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a></th> 
-                                <th><a href="{{" title="Delete"><button class="btn-danger btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete</button></a></th>      
+                                <th><form method="POST" action="{{url( 'user/' . $data->id )}}" accept-charset="UTF-8" style="display:inline">
+                                    {{method_field('Delete')}}
+                                    {{csrf_field()}}
+                                <button type="submit" class="btn-danger btn-sm" tittle="Delete"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Delete</button>    
+                                </form></th> 
                             </tr>
                         @endforeach
                     </tbody>
